@@ -5,21 +5,32 @@ from Command import Command
 def install_wasm():
     print("git clone https://github.com/emscripten-core/emsdk.git")
     os.system("git clone https://github.com/emscripten-core/emsdk.git")
-    print("sh emsdk/emsdk install latest")
+    print("./emsdk/emsdk install latest")
     command = Command("sh emsdk/emsdk install latest")
     command.run()
-    print("sh ./emsdk activate latest")
+    print("./emsdk activate latest")
     command = Command("sh emsdk/emsdk activate latest")
     command.run()
 
 def env_setup_wasm():
-    print("source emsdk/emsdk_env.sh --build=Release")
-    command = Command("source emsdk/emsdk_env.sh --build=Release")
-    command.run()
+    print("source emsdk/emsdk_env.sh --build=Release && env")
+    command = Command("source emsdk/emsdk_env.sh --build=Release && env")
+    return command.run()
 
 def run_wasm(file, browser, output= None):
-    env_setup_wasm()
-    command = Command("emcc {} -lm -o wasm/{}".format(file, file[:-1]+"html"))
+    env_variable = env_setup_wasm()
+    for line in env_variable:
+        line = line.strip("'")
+        line = line.strip("b'")
+        line = line.strip("n")
+        line = line.strip("\\")
+        line = line.strip()
+        if len(line) == 0 or line.startswith(("Adding", "Setting")):
+            continue
+        (key, _, value) = line.partition("=")
+        os.environ[key.strip()] = value.strip()
+
+    command = Command("emcc {} -s TOTAL_MEMORY=268435456  -s ALLOW_MEMORY_GROWTH=1 -lm -o wasm/{}".format(file, file[:-1]+"html"))
     command.run()
     # print("emcc {} -o wasm/{}".format(file, file[:-1]+"html"))
     command = Command('emrun wasm/{} --browser {} --port 8080 .'.format(file[:-1]+"html", browser))
