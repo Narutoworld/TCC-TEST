@@ -2,5 +2,4 @@ __pycache__/Command.cpython-37.pyc
 Command.pyc
 mobilenetv2
 /emsdk
-/wasm/*
 mobilenetv2.c
