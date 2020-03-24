@@ -11,7 +11,6 @@ class Command(object):
         def target():
             self.process = subprocess.Popen(self.cmd, shell=True, stdout=subprocess.PIPE)
             for line in self.process.stdout:
-                # print(line)
                 env_variable.append(str(line))
             self.process.communicate()
 

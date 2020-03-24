@@ -27,7 +27,9 @@ def run_riscv(file, output= None):
         compile_riscv(file)
         print('spike pk riscv/{}'.format(file[:-2]))
         command = Command('spike pk riscv/{}'.format(file[:-2]))
-        command.run()
+        stdout= command.run()
+        for line in stdout:
+            print(line)
 
 
 if __name__ == "__main__":
