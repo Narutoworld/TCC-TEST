@@ -29,7 +29,7 @@ def run_riscv(file, output= None):
         command = Command('spike pk riscv/{}'.format(file[:-2]))
         stdout= command.run()
         for line in stdout:
-            print(line)
+            print(line[2:-3])
 
 
 if __name__ == "__main__":
