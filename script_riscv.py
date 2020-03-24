@@ -16,6 +16,7 @@ def install_riscv():
     print(note)
 
 def compile_riscv(file):
+    print("riscv64-unknown-elf-gcc {} -lm -o riscv/{}".format(file, file[:-2]))
     command = Command("riscv64-unknown-elf-gcc {} -lm -o riscv/{}".format(file, file[:-2]))
     command.run()
 
@@ -24,6 +25,7 @@ def run_riscv(file, output= None):
         print(note)
     else:
         compile_riscv(file)
+        print('spike pk riscv/{}'.format(file[:-2]))
         command = Command('spike pk riscv/{}'.format(file[:-2]))
         command.run()
 
