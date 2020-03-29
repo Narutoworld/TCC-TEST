@@ -14,7 +14,7 @@
 
 ## Table of Inference Time (Avg of 5 times)
 
-| Condition  | Inference |
+| Condition  | Inference (seconds) |
 |---|---|
 | TF Thread=1  | 0.987266 |
 | TF Thread=2  | 0.983502  |
