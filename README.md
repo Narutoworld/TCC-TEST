@@ -22,9 +22,9 @@
 | TF Thread=4  | 0.98477  |
 | TCC OpenMp | 4.5208 |
 | WebAssembly Old Chrome | 5.0366  |
-| WebAssembly New Chrome |   |
-| WebAssembly Old Safari |   |
-| WebAssembly New Safari |   |
+| WebAssembly New Chrome | 34.0354  |
+| WebAssembly Old Safari | 32.77124  |
+| WebAssembly New Safari | 32.8444  |
 
 ## Capabilty of other architecture
 
