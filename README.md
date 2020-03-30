@@ -23,8 +23,10 @@
 | TCC OpenMp | 4.5208 |
 | WebAssembly Old Chrome | 5.0366  |
 | WebAssembly New Chrome | 34.0354  |
+| WebAssembly New None Opt Chrome | 5.1726  |
 | WebAssembly Old Safari | 32.77124  |
 | WebAssembly New Safari | 32.8444  |
+| WebAssembly New None Opt Safari | 32.76 |
 
 ## Capabilty of other architecture
 
