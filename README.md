@@ -29,9 +29,19 @@
 | WebAssembly New None Opt Safari | 32.76 |
 
 ## Capabilty of other architecture
+### Web Assembly 
+[Install WebAssembly Environment](https://webassembly.org/getting-started/developers-guide/)
+### ARM 
+[Archc Retargetable Simulator](http://www.archc.org/)
 
-### ARM
-**Reference**
+[SystemC Dependency](https://www.accellera.org/downloads/standards/systemc)
 
-### RISCV
-**Reference**
+[Configured Arm Cross-compiler](http://www.archc.org/downloads.html)
+
+### RISCV 
+[GNU tool-install Newlib](https://github.com/riscv/riscv-gnu-toolchain)
+
+[Spike Simulator](https://github.com/riscv/riscv-isa-sim)
+
+[Riscv pk](https://github.com/riscv/riscv-pk)
+
