@@ -21,6 +21,7 @@
 | TF Thread=3  | 0.975702  |
 | TF Thread=4  | 0.98477  |
 | TCC OpenMp | 4.5208 |
+| TCC OpenMp -O2 | 0.371 |
 | WebAssembly Old Chrome | 5.0366  |
 | WebAssembly New Chrome | 34.0354  |
 | WebAssembly New None Opt Chrome | 5.1726  |
